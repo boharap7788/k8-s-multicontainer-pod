@@ -15,3 +15,18 @@ Here are some common use cases for sidecar containers:
 
     Proxying or routing:
     Sidecar containers can act as proxies or routers, handling network requests and forwarding them to the main application container. This is often used in service mesh architectures for handling traffic between microservices.
+    
+# Command to execute side container 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+kubectl apply -f pod-with-sidecar.yaml
+
+kubectl get pods
+kubectl logs pod-with-sidecar -c main-container
+kubectl logs pod-with-sidecar -c sidecar-container
+
+# how to check how many container inside pod
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+kubectl get pod <pod-name> -o jsonpath='{.spec.containers[*].name}'
+
+kubectl describe pod <pod-name>
+
