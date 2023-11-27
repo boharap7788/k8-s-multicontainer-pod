@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-sidecar
+spec:
+  containers:
+  - name: main-container
+    image: nginx
+    ports:
+    - containerPort: 80
+      name: nginx-port
+
+  - name: sidecar-container
+    image: busybox
+    command: ["/bin/sh", "-c", "echo 'Hello from the sidecar!' && sleep 3600"]
