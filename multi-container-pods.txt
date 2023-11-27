@@ -1,0 +1,33 @@
+Multi-container pods in Kubernetes can be used for various purposes, each serving a specific function within the pod. Here are some common types of multi-container pods:
+
+    Sidecar Pattern:
+        Description: A sidecar is a secondary container that runs alongside the main application container. It enhances or extends the functionality of the main container without affecting its core logic.
+        Use Cases: Logging, monitoring, data syncing, encryption, or proxying.
+
+    Adapter Pattern:
+        Description: An adapter container modifies or adapts the data presented by the main container to make it consumable by another component.
+        Use Cases: Format conversion, translating logs, or transforming data.
+
+    Ambassador Pattern:
+        Description: An ambassador container is responsible for handling communication between the main container and external services. It acts as an intermediary for network communication.
+        Use Cases: Proxying requests, handling network communication, or routing traffic.
+
+    Init Container Pattern:
+        Description: Init containers run before the main containers start. They are used to perform setup or initialization tasks, such as preparing data or waiting for a database to be ready.
+        Use Cases: Database initialization, data pre-processing, or fetching configuration files.
+
+    Helper Pattern:
+        Description: A helper container provides utility functions or tools that assist the main container during its operation.
+        Use Cases: Providing debugging tools, utilities for maintenance, or troubleshooting.
+
+    Logging and Monitoring Pattern:
+        Description: Multiple containers work together to collect, process, and export logs or metrics from the main application container.
+        Use Cases: Centralized logging, metrics collection, or monitoring.
+
+    Batch Processing Pattern:
+        Description: Containers within the pod collaborate to perform batch processing tasks. Each container may have a specific role in the processing pipeline.
+        Use Cases: Data processing pipelines, parallel batch processing, or ETL (Extract, Transform, Load) workflows.
+
+    Adapter (Sidecar) with Ambassadors:
+        Description: A combination of the adapter pattern and ambassador pattern where a sidecar container adapts or processes data, and an ambassador container handles external communication.
+        Use Cases: Combining data processing and external communication responsibilities.
